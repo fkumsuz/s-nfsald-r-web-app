@@ -6,54 +6,7 @@
     <title>Flask App with Image</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <h1>name</h1>
-    <div id="imageContainer">
-        <img id="image" src= "static/images/Hamburger.jpg"  alt="Image">
-    </div>
-    <h1>Sınıfsaldır</h1>
-    <div class="buttonContainer">
-        <button id="prevButton">Hayır</button>
-        <button id="nextButton">Evet</button>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const image = document.getElementById('image');
-            const nextButton = document.getElementById('nextButton');
-            const prevButton = document.getElementById('prevButton');
-            let currentIndex = 0;
-            let imageFiles = {{ image_files | tojson }};
-            let imageNames = {{ image_names | tojson }};
-
-            // Function to load the next image
-            function loadNextImage() {
-                currentIndex = (currentIndex + 1) % imageFiles.length;
-                const imageUrl = imageFiles[currentIndex];
-                const imageName = imageNames[currentIndex];
-                image.src = imageUrl;
-                document.querySelector('h1').innerText = imageName;
-            }
-
-            // Load the first image when the page loads
-            loadNextImage();
-
-            // Add event listener to the next button
-            nextButton.addEventListener('click', loadNextImage);
-
-            // Add event listener to the previous button
-            prevButton.addEventListener('click', function() {
-                currentIndex = (currentIndex + 1 + imageFiles.length) % imageFiles.length;
-                const imageUrl = imageFiles[currentIndex];
-                const imageName = imageNames[currentIndex];
-                image.src = imageUrl;
-                document.querySelector('h1').innerText = imageName;
-            });
-        });
-    </script>
-=======
     <h1>Welcome to my Flask App!</h1>
     <img src="{{ image_path }}" alt="Image">
->>>>>>> 0b42268002c42abd933e5ffcb5dcfe4eca899d2d
 </body>
 </html>
