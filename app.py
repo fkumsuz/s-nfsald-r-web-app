@@ -43,8 +43,9 @@ app = Flask(__name__)
 image_folder = "static/images"
 # Get the list of image files and names in the folder
 image_files = [os.path.join(image_folder, file) for file in os.listdir(image_folder) if file.endswith((".jpg", ".jpeg", ".png"))]
+print(image_files)
 image_names = [os.path.splitext(os.path.basename(file))[0] for file in image_files]
-
+print(image_names)
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html', image_files=image_files, image_names=image_names, background_color=BACKGROUND_COLOR, text_color=TEXT_COLOR)
