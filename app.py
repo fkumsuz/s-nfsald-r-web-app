@@ -1,12 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    # Assuming 'image.jpg' is inside the 'static' folder
-    image_path = 'docs/assets/image.jpg'
-    return render_template('index.html', image_path=image_path)
+    # Route to serve the HTML page
+    return render_template('index.html')
+
+@app.route('/assets/<path:filename>')
+def assets(filename):
+    # Route to serve the image file
+    return send_from_directory('docs/assets', filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
