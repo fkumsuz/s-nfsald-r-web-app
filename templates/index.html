@@ -3,39 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Viewer</title>
-    <style>
-        body {
-            background-color: {{ background_color }};
-            color: {{ text_color }};
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        #imageContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        #image {
-            max-width: 700px;
-            max-height: 700px;
-        }
-        .buttonContainer {
-            display: flex;
-            margin-top: 70px;
-        }
-        .buttonContainer button {
-            margin: 0 70px;
-            padding: 40px 40px; /* Adjust padding for larger buttons */
-            font-size: 34px; /* Adjust font size */
-        }
-    </style>
+    <title>Flask App with Image</title>
 </head>
 <body>
+<<<<<<< HEAD
     <h1>name</h1>
     <div id="imageContainer">
         <img id="image" src= "static/images/Hamburger.jpg"  alt="Image">
@@ -80,5 +51,9 @@
             });
         });
     </script>
+=======
+    <h1>Welcome to my Flask App!</h1>
+    <img src="{{ image_path }}" alt="Image">
+>>>>>>> 0b42268002c42abd933e5ffcb5dcfe4eca899d2d
 </body>
 </html>

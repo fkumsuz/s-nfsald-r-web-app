@@ -1,31 +1,10 @@
-"""from flask import Flask, render_template
-import os
-from PIL import Image
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Folder containing the original images
-original_image_folder = "static/images"
-# Folder to store resized images
-resized_image_folder = "static/resized_images"
-
-# Get the list of image files in the original folder
-image_files = [file for file in os.listdir(original_image_folder) if file.endswith((".jpg", ".jpeg", ".png"))]
-# Ensure the resized images folder exists
-os.makedirs(resized_image_folder, exist_ok=True)
-
-# Resize all images to 500x500 and save them to the resized folder
-resized_image_files = []
-for filename in image_files:
-    image_path = os.path.join(original_image_folder, filename)
-    with Image.open(image_path) as img:
-        img_resized = img.resize((500, 500))
-        resized_image_path = os.path.join(resized_image_folder, filename)
-        img_resized.save(resized_image_path)
-        resized_image_files.append(os.path.join("resized_images", filename))
-
 @app.route('/')
 def index():
+<<<<<<< HEAD
     return render_template('index.html', image_files=resized_image_files)
 
 if __name__ == '__main__':
@@ -49,6 +28,11 @@ print(image_names)
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html', image_files=image_files, image_names=image_names, background_color=BACKGROUND_COLOR, text_color=TEXT_COLOR)
+=======
+    # Assuming 'image.jpg' is inside the 'static' folder
+    image_path = '/static/image.jpg'
+    return render_template('index.html', image_path=image_path)
+>>>>>>> 0b42268002c42abd933e5ffcb5dcfe4eca899d2d
 
 if __name__ == '__main__':
     app.run(debug=True)
